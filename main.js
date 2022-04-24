@@ -1,31 +1,26 @@
 /*
-  Arrays Methods [Adding And Removing]
-  - unshift("", "") Add Element To The First
-  - push("", "") Add Element To The End
-  - shift() Remove First Element From Array
-  - pop() Remove Last Element From Array
+  Arrays Methods [Search]
+  - indexOf(Search Element, From Index [Opt])
+  - lastIndexOf(Search Element, From Index [Opt])
+  - includes(valueToFind, fromIndex [Opt]) [ES7]
 */
 
-let myFriends = ['Ahmed', 'Mohamed', 'Sayed', 'Alaa'];
+let myFriends = ['Ahmed', 'Mohamed', 'Sayed', 'Alaa', 'Ahmed'];
 
 console.log(myFriends);
 
-myFriends.unshift('Osama', 'Nabil');
+console.log(myFriends.indexOf('Ahmed'));
+console.log(myFriends.indexOf('Ahmed', 2));
 
-console.log(myFriends);
+console.log(myFriends.lastIndexOf('Ahmed'));
+console.log(myFriends.lastIndexOf('Ahmed', -2));
 
-myFriends.push('Samah', 'Eman');
+console.log(myFriends.includes('Ahmed'));
+console.log(myFriends.includes('Ahmed', 2));
 
-console.log(myFriends);
+if (myFriends.lastIndexOf('Osama') === -1) {
+  console.log('Not Found');
+}
 
-let first = myFriends.shift();
-
-console.log(myFriends);
-
-console.log(`First Name Is ${first}`);
-
-let last = myFriends.pop();
-
-console.log(myFriends);
-
-console.log(`Last Name Is ${last}`);
+console.log(myFriends.indexOf('Osama'));
+console.log(myFriends.lastIndexOf('Osama'));
