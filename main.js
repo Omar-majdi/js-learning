@@ -1,20 +1,12 @@
 /*
-  Loop Control
-  - Break
-  - Continue
-  - Label
+  Loop For Advanced Example
 */
 
-let products = ['Keyboard', 'Mouse', 'Pen', 'Pad', 'Monitor'];
+let products = ['Keyboard', 'Mouse', 'Pen', 'Pad', 'Monitor', 'iPhone'];
+let i = 0;
 
-let colors = ['Red', 'Green', 'Black'];
-
-mainLoop: for (let i = 0; i < products.length; i++) {
+for (;;) {
   console.log(products[i]);
-  nestedLoop: for (let j = 0; j < colors.length; j++) {
-    console.log(`- ${colors[j]}`);
-    if (colors[j] === 'Green') {
-      break mainLoop;
-    }
-  }
+  i++;
+  if (i === products.length) break;
 }
