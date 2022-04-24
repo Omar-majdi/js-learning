@@ -1,12 +1,31 @@
 /*
-  Array Methods
-  - Length
+  Arrays Methods [Adding And Removing]
+  - unshift("", "") Add Element To The First
+  - push("", "") Add Element To The End
+  - shift() Remove First Element From Array
+  - pop() Remove Last Element From Array
 */
-
-// Index Start From 0 [ 0, 1, 2, 3, 4 ]
 
 let myFriends = ['Ahmed', 'Mohamed', 'Sayed', 'Alaa'];
 
-myFriends.length = 2;
+console.log(myFriends);
+
+myFriends.unshift('Osama', 'Nabil');
 
 console.log(myFriends);
+
+myFriends.push('Samah', 'Eman');
+
+console.log(myFriends);
+
+let first = myFriends.shift();
+
+console.log(myFriends);
+
+console.log(`First Name Is ${first}`);
+
+let last = myFriends.pop();
+
+console.log(myFriends);
+
+console.log(`Last Name Is ${last}`);
