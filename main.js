@@ -1,17 +1,17 @@
 /*
   Function
-  - Return
-  - Automatic Semicolon Insertion [No Line Terminator Allowed]
-  - Interrupting
+  - Rest Parameters
+  - Only One Allowed
+  - Must Be Last Element
 */
 
-function generate(start, end) {
-  for (let i = start; i <= end; i++) {
-    if (i === 15) {
-      return `Interrupting`;
-    }
-    console.log(i);
+function calc(...numbers) {
+  // console.log(Array.isArray(numbers));
+  let result = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    result += numbers[i]; // result = result + numbers[i]
   }
+  return `Final Result Is ${result}`;
 }
 
-generate(10, 20);
+console.log(calc(10, 20, 10, 30, 50, 30));
