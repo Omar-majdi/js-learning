@@ -1,17 +1,25 @@
-/*
-  Function
-  - Rest Parameters
-  - Only One Allowed
-  - Must Be Last Element
-*/
-
-function calc(...numbers) {
-  // console.log(Array.isArray(numbers));
-  let result = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    result += numbers[i]; // result = result + numbers[i]
+function showInfo(
+  userName = 'Unknown',
+  age = 'Unknown',
+  rate = '0',
+  show = 'Yes',
+  ...skills
+) {
+  document.write(`<div>`);
+  document.write(`<h2>Welcome, ${userName}</h2>`);
+  document.write(`<p>Age: ${age}</p>`);
+  document.write(`<p>Hour Rate: $${rate}</p>`);
+  if (show === 'Yes') {
+    if (skills.length > 0) {
+      document.write(`<p>${skills.join(' | ')}</p>`);
+    } else {
+      document.write(`<p>Skills: No Skills</p>`);
+    }
+  } else {
+    document.write(`<p>Skills Is Hidden</p>`);
   }
-  return `Final Result Is ${result}`;
+
+  document.write(`</div>`);
 }
 
-console.log(calc(10, 20, 10, 30, 50, 30));
+showInfo('Omar', 17, 25, '0', 'HTML', 'CSS', 'JAVASCRIPT');
