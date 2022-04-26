@@ -1,26 +1,17 @@
 /*
-  Function Advanced Examples
+  Function
+  - Return
+  - Automatic Semicolon Insertion [No Line Terminator Allowed]
+  - Interrupting
 */
 
-function sayHello(userName, age) {
-  if (age < 20) {
-    console.log(`App is Not Suitable For You`);
-  } else {
-    console.log(`Hello ${userName} Your Age is ${age}`);
-  }
-}
-
-sayHello('Osama', 38);
-sayHello('Sayed', 40);
-sayHello('Ali', 18);
-
-function generateYears(start, end, exclude) {
+function generate(start, end) {
   for (let i = start; i <= end; i++) {
-    if (i === exclude) {
-      continue;
+    if (i === 15) {
+      return `Interrupting`;
     }
     console.log(i);
   }
 }
 
-generateYears(1982, 2021, 2020);
+generate(10, 20);
