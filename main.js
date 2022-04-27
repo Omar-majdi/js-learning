@@ -1,24 +1,48 @@
 /*
   Function
-  - Anonymous Function
-  - Calling Named Function vs Anonymous Function
-  - Argument To Other Function
-  - Task Without Name
-  - SetTimeout
+  - Function Inside Function
+  - Return Function
 */
 
-let calculator = function (num1, num2) {
-  return num1 + num2;
-};
+// Example 1
 
-console.log(calculator(10, 20));
-
-function sayHello() {
-  console.log('Hello Osama');
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+  // Nested Function
+  function concatMsg() {
+    message = `${message} ${fName} ${lName}`;
+  }
+  concatMsg();
+  return message;
 }
 
-document.getElementById('show').onclick = sayHello;
+console.log(sayMessage('Osama', 'Mohamed'));
 
-setTimeout(function elzero() {
-  console.log('Good');
-}, 2000);
+// Example 2
+
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+  // Nested Function
+  function concatMsg() {
+    return `${message} ${fName} ${lName}`;
+  }
+  return concatMsg();
+}
+
+console.log(sayMessage('Osama', 'Mohamed'));
+
+// Example 3
+
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+  // Nested Function
+  function concatMsg() {
+    function getFullName() {
+      return `${fName} ${lName}`;
+    }
+    return `${message} ${getFullName()}`;
+  }
+  return concatMsg();
+}
+
+console.log(sayMessage('Osama', 'Mohamed'));
