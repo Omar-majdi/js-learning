@@ -1,48 +1,25 @@
 /*
-  Function
-  - Function Inside Function
-  - Return Function
+    Function
+    - Arrow Function
+    -- Regular vs Arrow [Param + No Param]
+    -- Multiple lines
 */
 
-// Example 1
+let print = function () {
+  return 10;
+};
 
-function sayMessage(fName, lName) {
-  let message = `Hello`;
-  // Nested Function
-  function concatMsg() {
-    message = `${message} ${fName} ${lName}`;
-  }
-  concatMsg();
-  return message;
-}
+let printArrow = () => 10;
 
-console.log(sayMessage('Osama', 'Mohamed'));
+let printNum = function (num) {
+  return num;
+};
 
-// Example 2
+let printNumArrow = (num) => num;
 
-function sayMessage(fName, lName) {
-  let message = `Hello`;
-  // Nested Function
-  function concatMsg() {
-    return `${message} ${fName} ${lName}`;
-  }
-  return concatMsg();
-}
+let printSum = function (num1, num2) {
+  return num1 + num2;
+};
 
-console.log(sayMessage('Osama', 'Mohamed'));
-
-// Example 3
-
-function sayMessage(fName, lName) {
-  let message = `Hello`;
-  // Nested Function
-  function concatMsg() {
-    function getFullName() {
-      return `${fName} ${lName}`;
-    }
-    return `${message} ${getFullName()}`;
-  }
-  return concatMsg();
-}
-
-console.log(sayMessage('Osama', 'Mohamed'));
+let printSumArrow = (num1, num2) => num1 + num2;
+console.log(printSumArrow(100, 50));
