@@ -1,51 +1,32 @@
-let nums = [10, 20, 15, 30];
-
-// let add = nums.reduce(function (acc, current, index, arr) {
-//   console.log(`Acc => ${acc}`);
-//   console.log(`Current Element => ${current}`);
-//   console.log(`Current Element Index => ${index}`);
-//   console.log(`Array => ${arr}`);
-//   console.log(acc + current);
-//   console.log(`#############`);
-//   return acc + current;
-// });
-
-// console.log(add);
-
 /*
-Reduce
-- Longest Word
-- Remove Characters + Use Reduce
+  Higher Order Functions Challenges
+
+  You Can Use
+  - ,
+  - _
+  - Space
+  - True => 1 => One Time Only In The Code
+
+  You Cannot Use
+  - Numbers
+  - Letters
+
+  - You Must Use [Filter + Map + Reduce + Your Knowledge]
+  - Order Is Not Important
+  - All In One Chain
+
 */
 
-let theBiggest = [
-  'Bla',
-  'Propaganda',
-  'Other',
-  'AAA',
-  'Battery',
-  'Test',
-  'Propaganda_Two',
-];
+let myString = '1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z';
 
-let check = theBiggest.reduce((acc, current, index, arr) => {
-  console.log(`Acc => ${acc}`);
-  console.log(`Current Element => ${current}`);
-  console.log(acc.length > current.length ? acc : current);
-  console.log(`#############`);
-  return acc.length > current.length ? acc : current;
-});
-
-console.log(check);
-
-let removeChars = ['E', '@', '@', 'L', 'Z', '@', '@', 'E', 'R', '@', 'O'];
-
-let finalString = removeChars
-  .filter((ele) => {
-    return !ele.startsWith('@');
+let solution = myString
+  .split(',')
+  .filter((ele) => isNaN(parseInt(ele)))
+  .map((ele, ind, arr) => {
+    arr.length = arr.length--;
+    return ele.replace('_', ' ');
   })
-  .reduce((acc, current) => {
-    return `${acc}${current}`;
-  });
+  .reduce((acc, ele, index, arr) => acc + ele)
+  .slice(true);
 
-console.log(finalString);
+console.log(solution); // Elzero Web School
